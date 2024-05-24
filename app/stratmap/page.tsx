@@ -710,21 +710,25 @@ const Page = () => {
       console.log("data: ", data);
 
       const strategies = {
-        financial: data.financial.map((item: any) => ({ id: 1, fID: item.id, value: item.input })),
+        financial: data.financial.map((item: any) => ({
+          id: 1,
+          fID: item.id,
+          value: item.office_target,
+        })),
         stakeholder: data.stakeholder.map((item: any) => ({
           id: 2,
           fID: item.id,
-          value: item.input,
+          value: item.office_target,
         })),
         internalProcess: data.internalProcess.map((item: any) => ({
           id: 3,
           fID: item.id,
-          value: item.input,
+          value: item.office_target,
         })),
         learningGrowth: data.learningGrowth.map((item: any) => ({
           id: 4,
           fID: item.id,
-          value: item.input,
+          value: item.office_target,
         })),
       };
 
@@ -1174,7 +1178,7 @@ const Page = () => {
                               />
                               <button
                                 onClick={() =>
-                                    // @ts-ignore
+                                  // @ts-ignore
                                   handleLearningGrowthSaveEdit(strategy.fID, newStrategyValue)
                                 }
                                 className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-2"
@@ -1314,7 +1318,7 @@ const Page = () => {
                               />
                               <button
                                 onClick={() =>
-                                    // @ts-ignore
+                                  // @ts-ignore
                                   handleInternalProcessSaveEdit(strategy.fID, newStrategyValue)
                                 }
                                 className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-2"
@@ -1452,7 +1456,7 @@ const Page = () => {
                               />
                               <button
                                 onClick={() =>
-                                    // @ts-ignore
+                                  // @ts-ignore
                                   handleStakeholderSaveEdit(strategy.fID, newStrategyValue)
                                 }
                                 className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-2"
