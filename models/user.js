@@ -7,7 +7,7 @@ const User = {
       const hashedPassword = await bcrypt.hash(password, 10);
 
       await excuteQuery({
-        query: "CALL register_user(?, ?, ?, ?)",
+        query: "INSERT INTO users (username, email, password, department_id) VALUES (?, ?, ?, ?)",
         values: [username, email, hashedPassword, department_id],
       });
 
